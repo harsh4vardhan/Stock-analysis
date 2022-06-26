@@ -1,0 +1,55 @@
+<head>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" type="text/css"
+        href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.0/css/jquery.dataTables.css">
+    <link rel="stylesheet" type="text/css"
+        href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.0/css/jquery.dataTables_themeroller.css">
+    <script type="text/javascript" charset="utf8"
+        src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" charset="utf8"
+        src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.0/jquery.dataTables.min.js"></script>
+
+</head>
+<div class="container">
+    <h2>STOCK ANALYSIS</h2>
+    <script type="text/javascript" src="/main.js"></script>
+
+    <div class="options">
+        <form autocomplete="off" action="/action_page.php" style="border: #ddd 1px solid;">
+            <div class="autocomplete" style="width:300px;">
+
+                <input onclick="load_data()" id="myInput" type="text" name="myCountry" placeholder="Enter stock name">
+            </div>
+
+        </form>
+        <button onclick="ShowValueOfStock()" class="btn" style="background-color: #f68fa0;">Generate Dates</button>
+
+        <div class="options_of_calculate" style="margin-left:400px;">
+
+            <lable class="date_label">Start Date</lable>
+            <input type="date" name="start_date" id="start_date" class="date">
+            <lable class="date_label">End Date</lable>
+            <input type="date" name="end_date" id="end_date" class="date">
+            <button onclick="calculateProfit()" class="btn" style="background-color: #93b9dc;">Calculate Max
+                Profit</button>
+            <div style="float: right;">
+                <input type="file" name="file" id="file" class="custom-file-input">
+                <button onclick="uploadfile()" class="btn" style="background-color: #bdcc72;">Upload</button>
+            </div>
+        </div>
+    </div>
+    <div id="values" class="values" style="max-width:100%;min-width:100%;display: none;max-height: 390px;">
+    </div>
+    <table class="table" id="table">
+        <thead class="thead">
+            <tr>
+                <th class="th">Date</th>
+                <th class="th">Price</th>
+            </tr>
+        </thead>
+        <tbody id="tbody" class="tbody"></tbody>
+    </table>
+
+
+   
+</div>
